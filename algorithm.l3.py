@@ -1,27 +1,27 @@
-#A:
-def is_subset(larger, smaller):
-    #
-    lookup_set = set(larger)
-
-
-    for item in smaller:
-        if item not in lookup_set:
-            return False
-
-    return True
-
-
-
-list1 = ["a", "b", "c", "d", "e", "f"]
-list2 = ["b", "d", "f"]
-print(is_subset(list1, list2))
-
-list3 = ["b", "d", "f", "h"]
-print(is_subset(list1, list3))
-
-
-#B
-
+# #A:
+# def is_subset(larger, smaller):
+#     #
+#     lookup_set = set(larger)
+#
+#
+#     for item in smaller:
+#         if item not in lookup_set:
+#             return False
+#
+#     return True
+#
+#
+#
+# list1 = ["a", "b", "c", "d", "e", "f"]
+# list2 = ["b", "d", "f"]
+# print(is_subset(list1, list2))
+#
+# list3 = ["b", "d", "f", ]
+# print(is_subset(list1, list3))
+#
+#
+# #B
+#
 # def first_unique_char(s):
 #
 #     char_counts = {}
@@ -40,7 +40,7 @@ print(is_subset(list1, list3))
 
 
 #C
-
+#
 # def longest_palindrome(s):
 #
 #     counts = {}
@@ -82,38 +82,38 @@ print(is_subset(list1, list3))
 
 #D
 
-# def is_anagram(s, t):
-#
-#     if len(s) != len(t):
-#         return False
-#
-#
-#     count_s = {}
-#     count_t = {}
-#
-#     for char in s:
-#         count_s[char] = count_s.get(char, 0) + 1
-#
-#     for char in t:
-#         count_t[char] = count_t.get(char, 0) + 1
-#
-#
-#     return count_s == count_t
-#
-#
-#
-# tests_d = [
-#     ("нора", "рано", True),
-#     ("монета", "отмена", True),
-#     ("мышка", "камыш", True),
-#     ("тормони", "монитор", True),
-#     ("тоемони", "монитор", False),
-#     ("анаграмма", "амгармана", True),
-#     ("анаграмма", "грамм", False),
-# ]
-#
-# for s_str, t_str, expected in tests_d:
-#     res = is_anagram(s_str, t_str)
-#     status = "OK" if res == expected else "ОШИБКА"
-#     print(f"Строки: '{s_str}' и '{t_str}' -> Результат: {res} (Ожидалось: {expected}) | Статус: {status}")
-#     assert res == expected, f"Ошибка на {s_str}, {t_str}!"
+def is_anagram(s, t):
+
+    if len(s) != len(t):
+        return False
+
+
+    count_s = {}
+    count_t = {}
+
+    for char in s:
+        count_s[char] = count_s.get(char, 0) + 1
+
+    for char in t:
+        count_t[char] = count_t.get(char, 0) + 1
+
+
+    return count_s == count_t
+
+
+
+tests_d = [
+    ("нора", "рано", True),
+    ("монета", "отмена", True),
+    ("мышка", "камыш", True),
+    ("тормони", "монитор", True),
+    ("тоемони", "монитор", False),
+    ("анаграмма", "амгармана", True),
+    ("анаграмма", "грамм", False),
+]
+
+for s_str, t_str, expected in tests_d:
+    res = is_anagram(s_str, t_str)
+    status = "OK" if res == expected else "ОШИБКА"
+    print(f"Строки: '{s_str}' и '{t_str}' -> Результат: {res} (Ожидалось: {expected}) | Статус: {status}")
+    assert res == expected, f"Ошибка на {s_str}, {t_str}!"
