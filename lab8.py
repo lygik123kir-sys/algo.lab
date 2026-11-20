@@ -177,14 +177,14 @@ class TreeApp:
         try:
             return [int(x) for x in txt.split()]
         except ValueError:
-            messagebox.showerror("Ошибка", "Введите целые числа через пробел!")
+            messagebox.showerror("Ошибка", "Введите целые")
             return None
 
     def act_insert(self):
         keys = self.parse_keys()
         if keys is None or not keys: return
         added = [k for k in keys if self.tree.insert(k)]
-        self.status.config(text=f"Добавлено: {added}" if added else "Все узлы уже есть")
+        self.status.config(text=f"Добавлено: {added}" if added else " Этот узел уже есть")
         self.entry.delete(0, tk.END)
         self.render()
 
